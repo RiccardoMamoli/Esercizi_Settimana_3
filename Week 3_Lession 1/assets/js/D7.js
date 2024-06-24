@@ -240,7 +240,17 @@ const movies = [
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
 
+ let filmVecchio;
 
+ for (i = 0; i < movies.length; i++) {
+  let currentFilm = movies[i];
+  if (i === 0 || currentFilm.Year < filmVecchio.Year) {
+    filmVecchio = currentFilm;
+  }
+ };
+ console.log(filmVecchio);
+ 
+ 
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */

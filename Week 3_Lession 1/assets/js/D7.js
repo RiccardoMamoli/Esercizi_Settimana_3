@@ -308,8 +308,8 @@ console.log(selectedFilm);
 */
 
 function findIndex(year) {
-  const index = movies.findIndex(n => n.Year === year);
+  const index = movies.findIndex(n => n.Year == year);
   return index;
 }
 
-console.log(findIndex('2003'));
+console.log(findIndex(2003));

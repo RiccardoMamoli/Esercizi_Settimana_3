@@ -4,7 +4,6 @@
 */
 
 
-
 function concatString(string1, string2) {
   let finalString = (string1.substring(0, 2) + string2.substring(string2.length - 3)).toUpperCase();
   console.log(finalString);
@@ -57,7 +56,7 @@ function sumForEach() {
   return sumForEach;
 }
 
-console.log(sumForEach()); 
+console.log(sumForEach());
 
 //---------- FUNZIONE CORTA ------- //
 
@@ -102,6 +101,8 @@ console.log(incrementedArrayByN(20));
 
 const arrayEs7 = ['io', 'mi', 'chiamo', 'Riccardo Mamoli'];
 
+const arrayNumEs7 = arrayEs7.map((string) => string.length);
+console.log(arrayNumEs7);
 
 /* ESERCIZIO 8 (forEach o for)
   Scrivi una funzione per creare un array contenente tutti i valori DISPARI da 1 a 99.
@@ -110,7 +111,7 @@ const arrayEs7 = ['io', 'mi', 'chiamo', 'Riccardo Mamoli'];
 const arrayEs8 = [];
 
 function arrayEs8For() {
-  for (let i = 1; i < 101; i++ ) {
+  for (let i = 1; i < 101; i++) {
     if (i % 2 !== 0) {
       arrayEs8.push(i);
     }
@@ -240,17 +241,17 @@ const movies = [
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
 
- let filmVecchio;
+let filmVecchio;
 
- for (i = 0; i < movies.length; i++) {
+for (i = 0; i < movies.length; i++) {
   let currentFilm = movies[i];
   if (i === 0 || currentFilm.Year < filmVecchio.Year) {
     filmVecchio = currentFilm;
   }
- };
- console.log(filmVecchio);
- 
- 
+};
+console.log(filmVecchio);
+
+
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
@@ -266,7 +267,7 @@ console.log(moviesLength());
 */
 function mapEs11() {
   const titleArray = movies.map((film) => film.Title);
-  return titleArray; 
+  return titleArray;
 }
 
 console.log(mapEs11());
@@ -277,7 +278,7 @@ console.log(mapEs11());
 */
 
 function filterEs12() {
-  const arrayFiltered = movies.filter(function(film) {
+  const arrayFiltered = movies.filter(function (film) {
     return film.Year > 2000;
   }); return arrayFiltered;
 }
@@ -287,7 +288,7 @@ console.log(filterEs12());
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
 function totalSumEs13() {
-  const sumYear = movies.reduce((total, film) => total + Number(film.Year), 0);
+  const sumYear = movies.reduce((total, film) => total + parseInt(film.Year), 0);
   return sumYear;
 }
 
@@ -305,3 +306,10 @@ console.log(selectedFilm);
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+
+function findIndex(year) {
+  const index = movies.findIndex(n => n.Year === year);
+  return index;
+}
+
+console.log(findIndex('2003'));

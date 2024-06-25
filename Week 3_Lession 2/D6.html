@@ -130,9 +130,9 @@
     };
 
 
-     addToTheSecond();
+    addToTheSecond();
 
-   
+
 
     /* ESERCIZIO 6
      Scrivi una funzione che aggiunga un paragrafo al primo div
@@ -140,7 +140,7 @@
 
     const addParagraph = function () {
       const newP = document.createElement('p');
-      newP.textContent = 'Questo è un nuovo paragrafo creato da JS'
+      newP.innerText = 'Questo è un nuovo paragrafo creato da JS'
       document.querySelector('div').append(newP);
     }
 
@@ -180,8 +180,8 @@
         h1Element.style.color = '';
       });
       h1Element.addEventListener('click', function () {
-        let text = h1Element.textContent.slice(0, -1);
-        h1Element.textContent = text;
+        let text = h1Element.innerText.slice(0, -1);
+        h1Element.innerText = text;
       });
     }
 
@@ -193,19 +193,63 @@
     const revealFooterLink = function () {
       const footer = document.querySelector('footer');
       let linkText = document.querySelector('footer a').getAttribute('href');
-      footer.addEventListener('click', function() {
+      footer.addEventListener('click', function () {
         alert(linkText);
       });
-     }
-     revealFooterLink();
+    }
+    revealFooterLink();
 
     /* ESERCIZIO 11
      Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
      La tabella avrà 5 elementi e questa struttura: immagine, nome prodotto, quantità, prezzo
   */
 
-    const generateTable = function () { 
+
+    const prodotti = [
+      {
+        immagine: "https://example.com/images/prodotto1.jpg",
+        nomeProdotto: "Prodotto 1",
+        quantita: 10,
+        prezzo: 19.99
+      },
+      {
+        immagine: "https://example.com/images/prodotto2.jpg",
+        nomeProdotto: "Prodotto 2",
+        quantita: 5,
+        prezzo: 29.99
+      },
+      {
+        immagine: "https://example.com/images/prodotto3.jpg",
+        nomeProdotto: "Prodotto 3",
+        quantita: 8,
+        prezzo: 15.99
+      },
+      {
+        immagine: "https://example.com/images/prodotto4.jpg",
+        nomeProdotto: "Prodotto 4",
+        quantita: 20,
+        prezzo: 9.99
+      },
+      {
+        immagine: "https://example.com/images/prodotto5.jpg",
+        nomeProdotto: "Prodotto 5",
+        quantita: 3,
+        prezzo: 49.99
+      }
+    ];
+
+    
+
+
+    const generateTable = function () {
       let table = document.getElementById('tableArea').createElement(table);
+
+      const headerRow = document.createElement('tr');
+
+
+  
+
+
     }
 
     /* ESERCIZIO 12
@@ -235,13 +279,13 @@
         } return color;
       };
 
-      subTitle.addEventListener('click', function() {
+      subTitle.addEventListener('click', function () {
         let randomColor = getRandomColor();
         subTitle.style.color = randomColor;
       })
     }
 
-     changeColorWithRandom();
+    changeColorWithRandom();
 
   </script>
 

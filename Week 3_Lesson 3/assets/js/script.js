@@ -11,7 +11,7 @@ const newTaskContainer = document.getElementById('newTaskContainer');
 btnInsert.addEventListener('click', function (e) {
     e.preventDefault();
     newTaskCreation();
-})
+});
 
 function newTaskCreation() {
     const newTask = document.createElement('div');
